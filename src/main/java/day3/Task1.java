@@ -8,8 +8,10 @@ public class Task1 {
 
         String town;
         while (true) {
-town=scanner.nextLine();
-if (town.equals("Stop")){break;}
+            town = scanner.nextLine();
+            if (town.equals("Stop")) {
+                break;
+            }
             switch (town) {
                 case "Ростов":
                 case "Москва":
