@@ -1,27 +1,26 @@
 package day4;
 
-import java.util.ArrayList;
-
 public class Task4 {
     public static void main(String[] args) {
         int[] arrays = new int[100];
-        int sum = 0;
+        int maxSum = 0;
+        int maxSumIdx = 0;
         for (int i = 0; i < arrays.length; i++) {
             arrays[i] = (int) (Math.random() * (10000 - 1) + 1);
-
             System.out.print(arrays[i] + ", ");
-
         }
-        ArrayList<Integer> A = new ArrayList<Integer>();
-        int bbb = 0;
-        for (int i = 0; i < arrays.length - 2; i++) {
-            sum = 0;
-            sum = arrays[i] + arrays[i + 1] + arrays[i + 2];
-            A.add(sum);
+        for (int b = 0; b < arrays.length - 2; b++) {
+            int sum = 0;
+            for (int j = b; j < b + 3; j++) {
+                sum = sum + arrays[j];
+            }
+            if (sum > maxSum) {
+                maxSum = sum;
+                maxSumIdx = b;
+            }
         }
         System.out.println();
-        System.out.print(A);
-
-
+        System.out.println(maxSum);
+        System.out.println(maxSumIdx);
     }
 }
