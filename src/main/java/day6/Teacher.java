@@ -18,9 +18,6 @@ public class Teacher {
     }
 
     public void evaluate(Student student) {
-
-//        number = (int) (Math.random() * (10 - 1)) + 1;
-
         int ball = (2 + (int) (Math.random() * (6 - 2)));
         String s;
         switch (ball) {
@@ -33,11 +30,9 @@ public class Teacher {
             case 4:
                 s = "хорошо";
                 break;
-            case 5:
-                s = "отлично";
-                break;
             default:
-                throw new IllegalStateException("Unexpected value: " + ball);
+                s = "отлично";
+
         }
         System.out.println("Преподаватель " + name + " оценил студента с именем " + student.name + " по предмету " + subject + " на оценку " + s);
     }
