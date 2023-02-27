@@ -1,8 +1,8 @@
 package day6;
 
 public class Teacher {
-    String name;
-    String subject;
+    private String name;
+    private String subject;
 
     public Teacher(String name, String subject) {
         this.name = name;
@@ -34,6 +34,6 @@ public class Teacher {
                 s = "отлично";
 
         }
-        System.out.println("Преподаватель " + name + " оценил студента с именем " + student.name + " по предмету " + subject + " на оценку " + s);
+        System.out.println("Преподаватель " + name + " оценил студента с именем " + student.getName() + " по предмету " + subject + " на оценку " + s);
     }
 }

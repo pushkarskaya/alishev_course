@@ -1,7 +1,7 @@
 package day6;
 
 public class Student {
-    String name;
+    private String name;
 
     public Student(String name) {
         this.name = name;
@@ -9,5 +9,8 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public String getName(){
+        return name;
     }
 }
