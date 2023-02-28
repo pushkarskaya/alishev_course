@@ -18,8 +18,9 @@ public class Airplane {
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
-    public String toString(){
-        return "Изготовитель: "+manufacturer+", год выпуска: "+String.valueOf(year)+", длина: "+String.valueOf(lenght)+", вес: "+String.valueOf(weight) +", количество топлива в баке: "+String.valueOf(fuel);
+
+    public String toString() {
+        return "Изготовитель: " + manufacturer + ", год выпуска: " + String.valueOf(year) + ", длина: " + String.valueOf(lenght) + ", вес: " + String.valueOf(weight) + ", количество топлива в баке: " + String.valueOf(fuel);
 
     }
 

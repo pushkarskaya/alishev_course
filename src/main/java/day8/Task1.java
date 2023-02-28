@@ -11,16 +11,15 @@ public class Task1 {
         System.out.println(x);
         long time1 = stopTime1 - startTime1;
         System.out.println("Длительность работы в мс: " + time1);
-        StringBuilder builder=new StringBuilder();
+        StringBuilder builder = new StringBuilder();
         long startTime2 = System.currentTimeMillis();
-        for(int j=0;j<20000;j++){
-        builder.append(j).append(" ");
+        for (int j = 0; j < 20000; j++) {
+            builder.append(j).append(" ");
         }
         long stopTime2 = System.currentTimeMillis();
         System.out.println(builder);
         long time2 = stopTime2 - startTime2;
         System.out.println("Длительность работы в мс: " + time2);
-
 
 
     }
