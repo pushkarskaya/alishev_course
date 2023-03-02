@@ -1,25 +1,25 @@
 package day9.Task2;
 
 public class Triangle extends Figure {
-    int storona1;
-    int storona2;
-    int storona3;
+    double a;
+    double b;
+    double c;
 
-    public Triangle(int storona1, int storona2, int storona3, String color) {
+    public Triangle(double a, double b, double c, String color) {
         super(color);
-        this.storona1 = storona1;
-        this.storona2 = storona2;
-        this.storona3 = storona3;
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     @Override
     public double area() {
-        int p = (storona1 + storona2 + storona3) / 2;
-        return Math.sqrt(p * (p - storona1) * (p - storona2) * (p - storona3));
+        double p = (a + b + c) / 2;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
     @Override
     public double perimeter() {
-        return storona1 + storona2 + storona3;
+        return a + b + c;
     }
 }

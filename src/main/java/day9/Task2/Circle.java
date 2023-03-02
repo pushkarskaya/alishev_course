@@ -1,20 +1,20 @@
 package day9.Task2;
 
 public class Circle extends Figure {
-    private double radius;
+    private double r;
 
-    public Circle(int radius, String color) {
+    public Circle(double r, String color) {
         super(color);
-        this.radius = radius;
+        this.r = r;
     }
 
     @Override
     public double area() {
-        return Math.PI*Math.pow(radius,2);
+        return Math.PI * r * r;
     }
 
     @Override
     public double perimeter() {
-        return 2 * Math.PI * radius;
+        return 2 * Math.PI * r;
     }
 }

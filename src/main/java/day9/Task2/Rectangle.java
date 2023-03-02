@@ -1,10 +1,10 @@
 package day9.Task2;
 
 public class Rectangle extends Figure {
-    private int dlina;
-    private int shirina;
+    private double dlina;
+    private double shirina;
 
-    public Rectangle(int dlina, int shirina, String color) {
+    public Rectangle(double dlina, double shirina, String color) {
         super(color);
         this.dlina = dlina;
         this.shirina = shirina;
