@@ -21,12 +21,12 @@ public class Picker implements Worker {
     }
 
     public String toString() {
-        return "Зарплата сборщика" + getSalary() + " ,бонус " + getIsPayed();
+        return "Зарплата сборщика" + salary + " ,бонус " + getIsPayed();
     }
 
     @Override
     public void doWork() {
-        salary = 80 + getSalary();
+        salary += 80;
         warehouse.setCountPickedOrders(warehouse.getCountPickedOrders() + 1);
     }
 
@@ -38,7 +38,7 @@ public class Picker implements Worker {
             System.out.println("Бонус пока не доступен");
         } else if (warehouse.getCountPickedOrders() == 10000) {
             isPayed = true;
-            salary = salary + 70000;
+            salary += 70000;
         }
     }
 }

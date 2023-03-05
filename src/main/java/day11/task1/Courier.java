@@ -21,13 +21,13 @@ public class Courier implements Worker {
     }
 
     public String toString() {
-        return "Зарплата курьера" + getSalary() + ", бонус " + getIsPayed();
+        return "Зарплата курьера" + salary + ", бонус " + getIsPayed();
     }
 
 
     @Override
     public void doWork() {
-        salary = getSalary() + 100;
+        salary += 100;
         warehouse.setCountDeliveredOrders(warehouse.getCountDeliveredOrders() + 1);
     }
 
@@ -37,7 +37,7 @@ public class Courier implements Worker {
             System.out.println("Бонус уже был выплачен");
         } else if (warehouse.getCountDeliveredOrders() == 10000) {
             isPayed = true;
-            salary = salary + 50000;
+            salary += 50000;
         } else if (warehouse.getCountDeliveredOrders() < 10000) {
             System.out.println("Бонус пока не доступен");
         }
