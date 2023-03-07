@@ -26,17 +26,14 @@ public class Task5 {
         ArrayList<MusicArtist> members2 = new ArrayList<>();
         members2.add(member1band2);
         members2.add(member2band2);
-        MusicBand band2=new MusicBand("БИ-2",1988,members2);
+        MusicBand band2 = new MusicBand("БИ-2", 1988, members2);
         band2.printMembers();
 
-        band2=MusicBand.transferMembers(band1,band2);
+        MusicBand.transferMembers(band1, band2);
         System.out.println("Состав группы " + band1.getName() + " после слияния: ");
         band1.printMembers();
 
         System.out.println("Состав группы " + band2.getName() + " после слияния: ");
         band2.printMembers();
-
-
-
     }
 }

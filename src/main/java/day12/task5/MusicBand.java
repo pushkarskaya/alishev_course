@@ -13,14 +13,9 @@ public class MusicBand {
         this.members = members;
     }
 
-    public static MusicBand transferMembers(MusicBand band1, MusicBand band2) {
-        List<MusicArtist> members1 = band1.getMembers();
-        List<MusicArtist> members2 = band2.getMembers();
-        for (MusicArtist member : members1) {
-            members2.add(member);
-        }
-        band1.getMembers().clear();
-        return band2;
+    public static void transferMembers(MusicBand band1, MusicBand band2) {
+        band2.members.addAll(band1.members);
+        band1.members.clear();
     }
 
     public List<MusicArtist> getMembers() {

@@ -19,7 +19,8 @@ public class Task4 {
         members2.add("Лева Би2");
         MusicBand band2 = new MusicBand("БИ-2", 1988, members2);
         band2.printMembers();
-        band2 = MusicBand.transferMembers(band1, band2);
+
+        MusicBand.transferMembers(band1, band2);
 
         System.out.println("Состав группы " + band1.getName() + " после слияния: ");
         band1.printMembers();

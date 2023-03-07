@@ -13,14 +13,13 @@ public class MusicBand {
         this.members = members;
     }
 
-    public static MusicBand transferMembers(MusicBand band1, MusicBand band2) {
+    public static void transferMembers(MusicBand band1, MusicBand band2) {
         List<String> members1 = band1.getMembers();
         List<String> members2 = band2.getMembers();
         for (String member : members1) {
             members2.add(member);
         }
         band1.getMembers().clear();
-        return band2;
     }
 
     public List<String> getMembers() {
