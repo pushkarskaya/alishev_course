@@ -14,9 +14,8 @@ public class MusicBand {
     }
 
     public static void transferMembers(MusicBand band1, MusicBand band2) {
-        List<String> members1 = band1.getMembers();
         List<String> members2 = band2.getMembers();
-        for (String member : members1) {
+        for (String member : band1.getMembers()) {
             members2.add(member);
         }
         band1.getMembers().clear();
