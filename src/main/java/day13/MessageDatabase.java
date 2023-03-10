@@ -16,20 +16,13 @@ public class MessageDatabase {
     }
 
     public static void showDialog(User u1, User u2) {
-        List<Message> dialog = new ArrayList<>();
+
         for (Message message : messages
         ) {
-            if (((message.getSender().getUsername().contains(u1.getUsername())) &&
-                    (message.getReceiver().getUsername().contains(u2.getUsername()))) ||
-                    ((message.getSender().getUsername().contains(u2.getUsername())) &&
-                            (message.getReceiver().getUsername().contains(u1.getUsername())))) {
-                dialog.add(message);
+            if ((message.getSender() == u1) && (message.getReceiver() == u2) ||
+                    (message.getSender() == u2) && (message.getReceiver() == u1)) {
+                System.out.println((message.getSender() + ": " + message.getText()));
             }
         }
-        for (Message d : dialog
-        ) {
-            System.out.println(d.getSender() + ": " + d.getText());
-        }
-
     }
 }

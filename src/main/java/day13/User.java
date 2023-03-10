@@ -1,9 +1,10 @@
 package day13;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
-    ArrayList<String> subscriptions;
+    private List<String> subscriptions;
     private String username;
 
     public User(String username) {
@@ -15,7 +16,7 @@ public class User {
         return username;
     }
 
-    public ArrayList<String> getSubscriptions() {
+    public List<String> getSubscriptions() {
         return subscriptions;
     }
 
@@ -24,17 +25,11 @@ public class User {
     }
 
     public boolean isSubscribed(User user) {
-        if (subscriptions.contains(user.getUsername())) {
-            return true;
-        } else return false;
+        return subscriptions.contains(user.getUsername());
     }
 
     public boolean isFriend(User user) {
-        if ((user.subscriptions.contains(username)) && (subscriptions.contains(user.getUsername()))) {
-            return true;
-        } else {
-            return false;
-        }
+        return user.subscriptions.contains(username) && subscriptions.contains(user.getUsername());
     }
 
     public void sendMessage(User user, String text) {
