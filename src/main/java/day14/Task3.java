@@ -12,7 +12,6 @@ public class Task3 {
         File file = new File(path);
         System.out.println(parseFileToObjList(file));
     }
-
     public static List<Person> parseFileToObjList(File file) {
         try {
             List<Person> people = new ArrayList<>();
