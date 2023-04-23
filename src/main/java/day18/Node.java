@@ -23,7 +23,7 @@ public class Node {
         Node nodeNext = node;
         Node nodeCurrent = null;
         while (nodeNext != null) {
-            nodeCurrent=nodeNext;
+            nodeCurrent = nodeNext;
             if (number < nodeCurrent.getRoot()) {
                 nodeNext = nodeCurrent.getNodeLeft();
             } else {
