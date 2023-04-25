@@ -2,8 +2,8 @@ package day19;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author Neil Alishev
@@ -22,7 +22,6 @@ public class Task1 {
 
                 else {
                     wordToCount.put(word, 1);
-                    ;
                 }
             }
             for (String word : wordToCount.keySet()) {
@@ -30,9 +29,22 @@ public class Task1 {
 
             }
             if (wordToCount.containsKey("Чичиков")) {
+                System.out.println("Количество раз использования слова Чичиков:");
                 System.out.println("Чичиков - " + wordToCount.get("Чичиков"));
             }
             scanner.close();
+            Map<String, Integer> sortedMap = wordToCount.entrySet()
+                    .stream()
+                    .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                    .collect(Collectors
+                            .toMap(Map.Entry::getKey,
+                                    Map.Entry::getValue,
+                                    (e1, e2) -> e1,
+                                    LinkedHashMap::new));
+            System.out.println("Первые 100 самых часто употребляемых слов:");
+            sortedMap.entrySet()
+                    .stream().limit(100)
+                    .forEach((entry) -> System.out.println(entry.getKey() + " " + entry.getValue()));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
