@@ -3,7 +3,6 @@ package day19;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author Neil Alishev
@@ -33,21 +32,35 @@ public class Task1 {
                 System.out.println("Чичиков - " + wordToCount.get("Чичиков"));
             }
             scanner.close();
-            Map<String, Integer> sortedMap = wordToCount.entrySet()
-                    .stream()
-                    .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
-                    .collect(Collectors
-                            .toMap(Map.Entry::getKey,
-                                    Map.Entry::getValue,
-                                    (e1, e2) -> e1,
-                                    LinkedHashMap::new));
+            //Сортировка по значению
+            List list = new LinkedList(wordToCount.entrySet());
+            Collections.sort(list, new Comparator() {
+                @Override
+                public int compare(Object o1, Object o2) {
+                    return ((Comparable) ((Map.Entry) (o1)).getValue()).compareTo(((Map.Entry) (o2)).getValue());
+                }
+            });
+            //Меняем порядок элементов в LinkedList
+            Collections.reverse(list);
+            HashMap newSortedMap = new LinkedHashMap();
+            for (Iterator i = list.iterator(); i.hasNext(); ) {
+                Map.Entry entry = (Map.Entry) i.next();
+                newSortedMap.put(entry.getKey(), entry.getValue());
+            }
             System.out.println("Первые 100 самых часто употребляемых слов:");
-            sortedMap.entrySet()
-                    .stream().limit(100)
-                    .forEach((entry) -> System.out.println(entry.getKey() + " " + entry.getValue()));
+            Set set = newSortedMap.entrySet();
+            Iterator iterator = set.iterator();
+            int next = 0;
+            while (iterator.hasNext() && (next < 100)) {
+                Map.Entry map = (Map.Entry) iterator.next();
+                System.out.println(map.getKey() + " " + map.getValue());
+                next++;
+            }
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
     }
+
 }
