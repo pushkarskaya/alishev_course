@@ -19,6 +19,10 @@ public enum ChessPiece {
         return img;
     }
 
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     public String toString() {
         return getImg();
     }
